@@ -1,4 +1,4 @@
-<h4 align="center">**waybacksteroids** — Fast multi-domain Wayback Machine endpoint enumerator.</h4>
+<h4 align="center"><b>waybacksteroids</b> — Fast multi-domain Wayback Machine endpoint enumerator.</h4>
 
 <p align="center">
   <a href="#installation-instructions">Installation</a> •
