@@ -5,7 +5,7 @@
   <a href="#installation-instructions">Installation</a> •
   <a href="#usage">Usage</a> •
   <a href="#running-waybacksteroids">Running waybacksteroids</a> •
-  <a href="#examples">Examples</a> •
+  <a href="#examples">Examples</a>
 </p>
 
 ---
