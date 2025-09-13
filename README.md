@@ -28,8 +28,6 @@
 go install github.com/LucasKatashi/waybacksteroids/cmd/waybacksteroids@latest
 ```
 
-### Pre-built binaries
-
 ### Build manually
 ```sh
 git clone https://github.com/LucasKatashi/waybacksteroids.git
