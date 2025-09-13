@@ -1,21 +1,43 @@
 <h4 align="center"><b>waybacksteroids</b> — Fast multi-domain Wayback Machine endpoint enumerator.</h4>
 
 <p align="center">
+  <a href="#features">Features</a> •
   <a href="#installation-instructions">Installation</a> •
   <a href="#usage">Usage</a> •
-  <a href="#running-waybacksteroids">Running waybacksteroids</a>
+  <a href="#running-waybacksteroids">Running waybacksteroids</a> •
+  <a href="#examples">Examples</a> •
 </p>
 
 ---
 
-**waybacksteroids** is a enumeration tool that automates the retrieval of archived URLs from the Wayback Machine. It supports processing multiple domains simultaneously, making it useful for quickly discovering historical endpoints and uncovering hidden paths across different targets.
+**waybacksteroids** is an enumeration tool that automates the retrieval of archived URLs from the Wayback Machine. It supports processing **multiple domains simultaneously**, making it useful for quickly discovering historical endpoints and uncovering hidden paths across different targets.
 
-# Installation Instructions
+## Features
+- 🔍 Bulk fetch endpoints for any number of domains in one run  
+- 🚀 Concurrent requests (configurable threads, default 3, **max 5**)  
+- 📤 Flexible input: single domain, wordlist or stdin pipe (fits any recon workflow)  
+- 🎯 Clean, de-duplicated output per domain (`domain_steroids.txt`)  
+- 🖥️  Print-only mode for quick terminal checks (`-p`)  
+- 🔁  Auto-retry on transient failures (configurable)  
+- 📦  Single static binary—no dependencies after compile
+
+## Installation Instructions
+
+### From source (Go ≥ 1.20)
 ```sh
 go install github.com/LucasKatashi/waybacksteroids/cmd/waybacksteroids@latest
 ```
 
-# Usage
+### Pre-built binaries
+
+### Build manually
+```sh
+git clone https://github.com/LucasKatashi/waybacksteroids.git
+cd waybacksteroids
+go build -o waybacksteroids ./cmd/waybacksteroids
+```
+
+## Usage
 ```sh
 waybacksteroids -h
 ```
@@ -39,65 +61,40 @@ OUTPUT OPTIONS:
  -p, --print            print URLs to stdout (no files created)
  -v, --verbose          enable verbose mode
  -s, --silent           suppress banner and info messages
-
-EXAMPLES:
- # Single domain
- waybacksteroids -t example.com -o output/
-
- # Multiple domains from file
- waybacksteroids -w domains.txt -o output/
-
- # Pipe from subdomain enumeration tool
- subfinder -d example.com | waybacksteroids --stdin -o output/
-
- # Print to stdout only
- waybacksteroids -t example.com -p
 ```
 
----
+## Examples
 
-**waybacksteroids** 是一款自动化从Wayback Machine获取存档URL的枚举工具。它支持同时处理多个域名，能够快速发现历史端点并揭示不同目标中隐藏的路径，非常实用。
-
-# 安装说明
+**Single domain**  
 ```sh
-go install github.com/LucasKatashi/waybacksteroids/cmd/waybacksteroids@latest
+waybacksteroids -t example.com -o output/
 ```
 
-# 使用方法
+**Multiple domains from file**  
 ```sh
-waybacksteroids -h
+waybacksteroids -w domains.txt -o output/
 ```
 
-这将显示工具的帮助信息。以下是所有支持的选项。
-```console
-用法:
- waybacksteroids [选项]
+**Pipe from subdomain enumeration tool**  
+```sh
+subfinder -d example.com | waybacksteroids --stdin -o output/
+```
 
-输入方式 (选择一种):
- -t, --target           单个目标域名 (例如：example.com)
- -w, --wordlist         包含域名列表的文件 (每行一个域名)
- --stdin                从标准输入读取域名 (从其他工具管道传输)
+**Print to stdout only**  
+```sh
+waybacksteroids -t example.com -p
+```
 
-配置选项:
- -o, --output           输出目录 (必需) - 结果将保存为 domain_steroids.txt 文件
- --threads              并发线程数 (默认：3，推荐最大值：5)
- -r, --retries          失败请求的重试次数 (默认：3)
-
-输出选项:
- -p, --print            将URL打印到标准输出 (不创建文件)
- -v, --verbose          启用详细模式
- -s, --silent           隐藏横幅和信息消息
-
-示例:
- # 单个域名
- waybacksteroids -t example.com -o output/
-
- # 从文件读取多个域名
- waybacksteroids -w domains.txt -o output/
-
- # 从子域名枚举工具管道传输
- subfinder -d example.com | waybacksteroids --stdin -o output/
-
- # 仅打印到标准输出
- waybacksteroids -t example.com -p
+## Sample Output
+Running  
+```sh
+waybacksteroids -t example.com -o output/
+```
+creates `output/example.com_steroids.txt` containing:
+```
+http://example.com/robots.txt
+http://example.com/.git/config
+http://example.com/api/v1/users
+http://example.com/admin/login.jsp
+[...]
 ```
