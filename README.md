@@ -12,7 +12,7 @@
 
 # Installation Instructions
 ```sh
-go install github.com/LucasKatashi/waybacksteroidsseekly/cmd/waybacksteroids@latest
+go install github.com/LucasKatashi/waybacksteroids/cmd/waybacksteroids@latest
 ```
 
 # Usage
@@ -60,7 +60,7 @@ EXAMPLES:
 
 # 安装说明
 ```sh
-go install github.com/LucasKatashi/waybacksteroidsseekly/cmd/waybacksteroids@latest
+go install github.com/LucasKatashi/waybacksteroids/cmd/waybacksteroids@latest
 ```
 
 # 使用方法
