@@ -56,16 +56,6 @@ EXAMPLES:
 
 ---
 
-<h4 align="center">**waybacksteroids** — 快速多域名Wayback Machine端点枚举工具</h4>
-
-<p align="center">
-  <a href="#installation-instructions">安装说明</a> •
-  <a href="#usage">使用方法</a> •
-  <a href="#running-waybacksteroids">运行waybacksteroids</a>
-</p>
-
----
-
 **waybacksteroids** 是一款自动化从Wayback Machine获取存档URL的枚举工具。它支持同时处理多个域名，能够快速发现历史端点并揭示不同目标中隐藏的路径，非常实用。
 
 # 安装说明
