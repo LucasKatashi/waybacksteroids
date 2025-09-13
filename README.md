@@ -13,13 +13,9 @@
 **waybacksteroids** is an enumeration tool that automates the retrieval of archived URLs from the Wayback Machine. It supports processing **multiple domains simultaneously**, making it useful for quickly discovering historical endpoints and uncovering hidden paths across different targets.
 
 ## Features
-- 🔍 Bulk fetch endpoints for any number of domains in one run  
-- 🚀 Concurrent requests (configurable threads, default 3, **max 5**)  
 - 📤 Flexible input: single domain, wordlist or stdin pipe (fits any recon workflow)  
 - 🎯 Clean, de-duplicated output per domain (`domain_steroids.txt`)  
-- 🖥️  Print-only mode for quick terminal checks (`-p`)  
-- 🔁  Auto-retry on transient failures (configurable)  
-- 📦  Single static binary—no dependencies after compile
+- 🔁 Auto-retry on transient failures (configurable)  
 
 ## Installation Instructions
 
