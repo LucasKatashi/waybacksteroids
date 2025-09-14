@@ -71,7 +71,7 @@ waybacksteroids -w domains.txt -o output/
 
 **Pipe from subdomain enumeration tool**  
 ```sh
-subfinder -d example.com | waybacksteroids --stdin -o output/
+seekly -domain example.com | waybacksteroids --stdin -o output/
 ```
 
 **Print to stdout only**  
