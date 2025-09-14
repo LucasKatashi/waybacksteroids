@@ -29,6 +29,6 @@ func CustomUsage() {
 	fmt.Fprintf(os.Stderr, "EXAMPLES:\n")
 	fmt.Fprintf(os.Stderr, " # Single domain\n waybacksteroids -t example.com -o output/\n\n")
 	fmt.Fprintf(os.Stderr, " # Multiple domains from file\n waybacksteroids -w domains.txt -o output/\n\n")
-	fmt.Fprintf(os.Stderr, " # Pipe from subdomain enumeration tool\n subfinder -d example.com | waybacksteroids --stdin -o output/\n\n")
+	fmt.Fprintf(os.Stderr, " # Pipe from subdomain enumeration tool\n seekly -domain example.com | waybacksteroids --stdin -o output/\n\n")
 	fmt.Fprintf(os.Stderr, " # Print to stdout only\n waybacksteroids -t example.com -p\n")
 }
